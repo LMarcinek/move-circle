@@ -3,7 +3,9 @@ const info = document.querySelector(".info");
 
 const move = (e) => {
     console.log(e.keyCode)
-    //37 leftside
+    
+    
+    info.textContent=`Wartość x: ${circle.offsetLeft}, wartość y: ${circle.offsetTop}`
     switch (e.keyCode) {
         case 37:
             circle.style.left = circle.offsetLeft - 4 + "px";
@@ -14,13 +16,19 @@ const move = (e) => {
             break;
             
         case 39:
-            circle.style.right = circle.offset - 4 + "px";
+            circle.style.left = circle.offsetLeft + 4 + "px";
             break;
             
         case 40:
-            circle.style.bottom = circle.offsetbottom - 4 + "px";
+            circle.style.top = circle.offsetTop + 4 + "px";
             break;
-
+        case 32:
+            const red = Math.floor(Math.random()*256);
+            const green = Math.floor(Math.random()*256);
+            const blue = Math.floor(Math.random()*256);
+       
+            circle.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+            break;
 
 
         default:
